@@ -1,0 +1,368 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 110vh;
+    background: url(https://t4.ftcdn.net/jpg/03/43/25/09/360_F_343250968_iOiPEWxdWXd2UWMumSboTSHzwR7Q4Zpd.jpg);
+    
+}
+
+/* Style the heading container */
+.heading-container {
+	background-color: transparent;
+	padding: 50px;
+	text-align: center;
+	border-radius: 10px;
+	/*box-shadow: 0px 5px 10px rgba(0,0,0,0.1);*/
+	width: 100%;
+	position: relative;
+	top: 0;
+	left: 0;
+	z-index: 1;
+}
+
+/* Style the heading */
+.heading {
+	font-size: 3rem;
+	font-weight: bold; /* Make the font bold */
+	font-family: 'Poppins', cursive; /* Use a cursive font */
+	color: slategray;
+	margin: 0;
+	text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+	letter-spacing: 2px; /* Add some letter spacing */
+	word-spacing: 5px; /* Add some word spacing */
+	text-transform: uppercase; /* Make the text uppercase */
+}
+
+/* Add an icon to the heading */
+.heading::before {
+	content: '\f121'; /* Use a coding-related icon from Font Awesome */
+	font-family: 'Font Awesome 5 Free';
+	font-weight: 900;
+	display: inline-block; /* Make the icon an inline block */
+	width: 30px; /* Set the width of the icon */
+	height: 30px; /* Set the height of the icon */
+	background-color: black; /* Set the background color of the icon */
+	border-radius: 50%; /* Make the icon a circle */
+	margin-right: 10px; /* Add some space between the icon and the text */
+	color: #fff; /* Set the color of the icon */
+}
+
+.wrapper {
+   width: 750px;
+   background: transparent;
+   border: 2px solid rgba(255, 255, 255, .2);
+   border-radius: 10px;
+   backdrop-filter: blur(50px);
+   color: whitesmoke;
+   padding: 40px 35px 55px;
+   margin: 0 10px 0;
+}
+
+.wrapper h1{
+ font-size: 36px;
+ text-align: center;
+ margin-bottom: 20px;
+}
+
+.wrapper .input-box{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.input-box .input-field{
+    position: relative;
+    width: 50%;
+    height: 50px;
+    margin: 13px 0;
+}
+
+.input-box .input-field input{
+    width: 90%;
+    height: 100%;
+    background: transparent;
+    border: 2px solid black;
+    outline: none;
+    font-size: 16px;
+    color: whitesmoke;
+    border-radius: 6px;
+    padding: 15px 15px 15px 40px;
+}
+
+.input-box .input-field input::placeholder{
+    color:antiquewhite;
+}
+
+.input-box .input-field i{
+    position: absolute;
+    left:15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+}
+
+.wrapper label{
+    display: inline-block;
+    font-size: 20px;
+    margin: 20px 20px 23px;
+}
+
+.wrapper label input{
+    margin-right: 5px;
+}
+.wrapper .btn{
+    width: 100%;
+    height: 45px;
+    border: none;
+    outline: none;
+    border-radius: 100px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+
+.wrapper .social-login-btns {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.wrapper .social-login-btn {
+  width: 45%;
+  height: 40px;
+  border: none;
+  outline: none;
+  border-radius: 100px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.wrapper .social-login-btn i {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.wrapper .login-with-google {
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+.wrapper .login-with-github {
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #444;
+}
+
+.wrapper .login-with-google:hover {
+  background-color: #f0f0f0;
+}
+
+.wrapper .login-with-github:hover {
+  background-color: #444;
+}
+
+.login-btn {
+  background-color: transparent;
+  color: #fff;
+  padding: 10px 20px;
+  border: none ;
+  height:40px;
+  border-radius: 100px;
+  cursor: pointer;
+  margin-top: 30px;
+  border: 1px solid #444;
+}
+
+.login-btn:hover {
+  background-color: #0069d9;
+}
+
+/* Style the contact us section */
+
+.contact-us {
+    position: relative;
+    padding-top: 10rem;
+    bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    height: 50%; /* reduced height */
+    width: 50%; /* reduced width */
+    background-color: transparent;
+    text-align: center;
+  }
+  
+  .contact-us h2 {
+    font-size: 1.5rem; /* reduced font size */
+    font-weight: bold;
+    color: white;
+    margin-bottom: 10px;
+  }
+  
+  .contact-us p {
+    color: whitesmoke;
+    margin-bottom: 15px; /* reduced margin bottom */
+  }
+  
+  .contact-us form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .contact-us input, .contact-us textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px; /* reduced font size */
+    font-weight: 600;
+    background: transparent;
+    border: 2px solid black;
+    outline: none;
+    color: whitesmoke;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+  
+  .contact-us button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px; /* reduced padding */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .contact-us button:hover {
+    background-color: #0069d9;
+  }
+  
+  .contact-us input::placeholder{
+    left: 20px; /* reduced left position */
+    color:whitesmoke;
+  }
+  
+  .contact-us textarea::placeholder{
+    left: 20px; /* reduced left position */
+    color:whitesmoke;
+  }
+  
+  .input-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px; /* reduced margin bottom */
+  }
+  
+  .input-container i {
+    position: absolute;
+    left: 10px; /* reduced left position */
+    top: 40%;
+    transform: translateY(-40%);
+    font-size: 18px; /* reduced font size */
+    color: #ccc;
+  }
+  
+  .input-container input {
+    left: 10px; /* reduced left position */
+    width: 100%;
+    height: 40%; /* reduced height */
+    padding: 20px 30px; /* reduced padding */
+    border: 2px solid #ccc;
+    border-radius: 6px;
+  }
+  
+  .input-container textarea {
+    height: 100px; /* reduced height */
+    left: 10px; /* reduced left position */
+    width: 100%;
+    padding: 30px 30px; /* reduced padding */
+    border: 2px solid #ccc;
+    border-radius: 6px;
+  }
+
+ /* Mobile devices (max-width: 480px) */
+@media only screen and (max-width: 480px) {
+  .wrapper {
+    width: 90vw;
+    padding: 20px 15px;
+    margin-top: 100px; /* Add margin top to prevent overlap */
+  }
+  .container{
+    display:flex;
+    flex-direction:column;
+  }
+  .input-box .input-field {
+    width: 100%;
+  }
+  .contact-us {
+    top: 600px;
+    width: 90vw;
+    padding: 20px 15px;
+    margin-top: 160px; /* Add margin top to prevent overlap */
+  }
+  .contact-us input, .contact-us textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 12px;
+  }
+}
+
+/* Tablet devices (min-width: 481px and max-width: 768px) */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .wrapper {
+    width: 80vw;
+    padding: 25px 20px;
+    margin-top: 150px; /* Add margin top to prevent overlap */
+  }
+  .input-box .input-field {
+    width: 80%;
+  }
+  .contact-us {
+    top: 700px;
+    width: 80vw;
+    padding: 25px 20px;
+    margin-top: 75px; /* Add margin top to prevent overlap */
+  }
+  .contact-us input, .contact-us textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+  }
+}
+
+/* Landscape mode (max-width: 1024px and orientation: landscape) */
+@media only screen and (max-width: 1024px) and (orientation: landscape) {
+  .wrapper {
+    width: 70vw;
+    padding: 30px 25px;
+    margin-top: 200px; /* Add margin top to prevent overlap */
+  }
+  .input-box .input-field {
+    width: 70%;
+  }
+  .contact-us {
+    top: 800px;
+    width: 70vw;
+    padding: 160px 25px 0px;
+    margin-top: 200px; /* Add margin top to prevent overlap */
+  }
+  .contact-us input, .contact-us textarea {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+  }
+}
