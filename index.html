@@ -1,45 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Registration Form</title>
-   <link rel="stylesheet" href="style.css">
-   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
-  <div class="container">
-    <div class="heading-container">
-      <h1 class="heading"><i class="fas fa-code"></i> CODESQUAD</h1>
-    </div>
-    <!-- <div class="outer-box"> -->
-        <div class="wrapper">
-            <h1>Register</h1>
-            <div class="input-box">
-                <div class="input-field">
-                    <input type="file" id="profileImage" name="profileImage" accept=".jpg,.png">
-                    <label for="profileImage" class="profile-image-label"><i class="fas fa-plus"></i></label>
+    <div class="codesquad"><h1>Contact Us</h1></div>
+    
+    <!-- <div class="container"> -->
+        <div class="form-container">
+            <form>
+                <div class="input-group">
+                    <label for="name"><i class="fa fa-user"></i></label>
+                    <input type="text" id="name" name="name" placeholder="Full Name" required>
                 </div>
-                <div class="input-field">
-                    <input type="text" placeholder="Full Name" required>
-                    <i class='bx bx-user'></i>
+                <div class="input-group">
+                    <label for="email"><i class="fa fa-envelope"></i></label>
+                    <input type="email" id="email" name="email" placeholder="Email" required>
                 </div>
-                <div class="input-field">
-                    <input type="email" placeholder="Email" required>
-                    <i class='bx bxl-gmail'></i>
+                <div class="input-group">
+                    <div class="message-icon-container">
+                        <div class="message-">
+                            <label for="message"><i class="fa fa-comment"></i></label>
+                        </div>
+                    </div>
+                    <textarea id="message" name="message" placeholder="Message"></textarea>
                 </div>
-                <div class="input-field">
-                    <textarea placeholder="Message"></textarea>
+                <div class="input-group">
+                    <label for="image"><i class="fa fa-image"></i></label>
+                    <input type="file" id="image" name="image" accept=".jpg,.png">
                 </div>
-            </div>
-            <button type="submit" class="btn">Submit</button>
+                <div class="form-button-container">
+                    <button class="button-59" role="button">Submit</button></div>
+            </form>
         </div>
     <!-- </div> -->
-  </div>
-  <script>
-    window.scrollTo(0, 0);
-  </script>
 </body>
 </html>
