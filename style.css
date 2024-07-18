@@ -28,7 +28,7 @@ body {
     padding: 20px; 
     text-align: center;
     margin-bottom: 30px;
-    margin-top: 200px;
+    margin-top: 20rem;
 }
 
 .heading {
@@ -41,10 +41,11 @@ body {
 }
 
 .outer-box {
-    background-color: #f1f3f4;
+    /* background-color: #f1f3f4; */
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10rem;
 }
 
 .wrapper {
@@ -53,6 +54,7 @@ body {
     border-radius: 10px;
     border: black;
     text-align: left;
+    margin-bottom: 10rem;
 }
 
 .wrapper h1 {
@@ -119,7 +121,7 @@ body {
 
 .input-field input:focus,
 .input-field textarea:focus {
-    border-color: #007bff;
+    border-color:black;
 }
 
 .input-field input::placeholder,
