@@ -230,10 +230,11 @@ label {
         padding: 30px;
     }
     .social-login-btn {
-        width: 100%;
+        width: 48%;
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: space-between;
     }
     .input-field {
         width: 100%;
