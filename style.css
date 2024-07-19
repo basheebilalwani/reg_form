@@ -35,11 +35,11 @@ body {
 .form-container {
     background-color: #d7d1d0;
     padding: 30px;
-    border-radius: 15px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 500px;
+    margin: 0 auto;
 }
 
 .input-group {
@@ -50,21 +50,18 @@ body {
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 5px;
-}
-
-.input-group textarea {
-    height: 80px;
-    resize: none; 
-    overflow-y: auto;
+    position: relative;
 }
 
 .input-group label {
-    margin-right: 20px;
-}
-
-::placeholder {
-    color: #b7b5b5;
-    font-family: sans-serif;
+    margin-right: 10px;
+    font-size: 16px;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: all 0.2s ease;
 }
 
 .input-group input,
@@ -72,17 +69,40 @@ body {
     width: 100%;
     border: none;
     outline: none;
+    padding-left: 25px;
 }
 
-.message-icon-container {
-    position: relative;
-    top: 0;
-    left: 0;
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label,
+.input-group textarea:focus + label,
+.input-group textarea:not(:placeholder-shown) + label {
+    top: 5px;
+    font-size: 12px;
+    color: #666;
 }
 
-.message-icon {
-    width: 20px; 
+.input-group textarea {
+    height: 80px;
+    resize: none;
+    overflow-y: auto;
+}
+
+.message-icon-container,
+.file-icon-container {
+    position: absolute;
+    left: 2px;
+    top: 18px;
+}
+
+.message-icon,
+.file-icon {
+    width: 20px;
     height: 20px;
+}
+
+::placeholder {
+    color: #b7b5b5;
+    font-family: sans-serif;
 }
 
 .button-59 {
@@ -123,6 +143,10 @@ body {
     fill: #06f;
 }
 
+input[type="file"] {
+    padding-left: 25px;
+}
+
 input::file-selector-button {
     align-items: center;
     background-color: #fff;
@@ -139,7 +163,7 @@ input::file-selector-button {
     letter-spacing: -.8px;
     line-height: 24px;
     outline: 0;
-    padding: 0 17px;
+    padding: 0 17px ;
     text-align: center;
     text-decoration: none;
     transition: all .3s;
@@ -154,7 +178,7 @@ input::file-selector-button:hover {
     background-color: #000;
 }
 
-input[type='file']::after {
+input[type="file"]::after {
     content: '(.jpg/.png only)';
     color: black;
     margin-right: 30px;
@@ -172,13 +196,8 @@ input[type='file']::after {
         width: 90%;
     }
 
-    .input-group {
-        flex-direction: column;
-    }
-
     .input-group label {
         margin-right: 0;
-        margin-bottom: 10px;
     }
 
     .button-59 {
