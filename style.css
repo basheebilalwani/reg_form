@@ -145,9 +145,9 @@ body {
 }
 
 .button-59:active {
-    border-color: #06f;
-    color: #06f;
-    fill: #06f;
+    border-color: white;
+    color: white;
+    fill: white;
 }
 
 input[type="file"] {
