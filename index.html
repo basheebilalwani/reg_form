@@ -4,42 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Arial', system-ui;
+        }
+        .error-message {
+            font-size: 12px;
+            color: #000;
+        }
+        ::placeholder {
+            color: #b7b5b5;
+            font-family: sans-serif;
+        }
+        .sharp {
+            border-radius: 0;
+        }
+        .bg-custom-orange {
+            background-color: #fff7ed;
+        }
+        .bg-custom-emerald {
+            background-color: #ecfdf5;
+        }
+        .bg-custom-gray {
+            background-color: #d7d1d0;
+        }
+        .text-custom-black {
+            color: #000;
+        }
+    </style>
 </head>
-<body>
-    <div class="codesquad"><h1>Contact Us</h1></div>
-    <div class="form-container">
-        <form>
-            <div class="input-group">
-                <label for="name"><i class="fa fa-user"></i></label>
-                <input type="text" id="name" name="name" placeholder="Full Name" required>
-                <span id="name-error" class="error-message"></span>
-            </div>
-            <div class="input-group">
-                <label for="email"><i class="fa fa-envelope"></i></label>
-                <input type="email" id="email" name="email" placeholder="Email" required>
-                <span id="email-error" class="error-message"></span>
-            </div>
-            <div class="input-group">
-                <div class="message-icon-container">
-                    <div class="message-">
-                        <label for="message"><i class="fa fa-comment"></i></label>
-                    </div>
+<body class="bg-custom-emerald flex flex-col justify-center items-center h-screen m-0">
+    <div class="bg-custom-orange p-5 sharp shadow-md text-center w-full max-w-2xl">
+        <h1 class="text-3xl mb-5">Contact Us</h1>
+        <div class="bg-custom-gray p-8 text-center shadow-lg w-full max-w-xl mx-auto">
+            <form>
+                <div class="flex items-center mb-5 p-2 bg-white border border-gray-300 sharp relative">
+                    <label for="name" class="absolute left-2 top-1/2 transform -translate-y-1/2 transition-all text-lg"><i class="fa fa-user"></i></label>
+                    <input type="text" id="name" name="name" placeholder="Full Name" required class="w-full border-none outline-none pl-8">
+                    <span id="name-error" class="error-message"></span>
                 </div>
-                <textarea id="message" name="message" placeholder="Message"></textarea>
-                <span id="message-count">0/100</span>
-                <span id="message-error" class="error-message"></span>
-            </div>
-            <div class="input-group">
-                <label for="image"><i class="fa fa-image"></i></label>
-                <input type="file" id="image" name="image" accept=".jpg,.png">
-                <span id="image-error" class="error-message"></span>
-            </div>
-            <div class="form-button-container">
-                <button class="button-59" role="button">Submit</button>
-            </div>
-        </form>
+                <div class="flex items-center mb-5 p-2 bg-white border border-gray-300 sharp relative">
+                    <label for="email" class="absolute left-2 top-1/2 transform -translate-y-1/2 transition-all text-lg"><i class="fa fa-envelope"></i></label>
+                    <input type="email" id="email" name="email" placeholder="Email" required class="w-full border-none outline-none pl-8">
+                    <span id="email-error" class="error-message"></span>
+                </div>
+                <div class="flex items-center mb-5 p-2 bg-white border border-gray-300 sharp relative">
+                    <label for="message" class="absolute left-2 top-1/2 transform -translate-y-1/2 transition-all text-lg"><i class="fa fa-comment"></i></label>
+                    <textarea id="message" name="message" placeholder="Message" class="w-full border-none outline-none pl-8 h-20 resize-none overflow-y-auto"></textarea>
+                    <span id="message-count" class="absolute right-2 bottom-2">0/100</span>
+                    <span id="message-error" class="error-message"></span>
+                </div>
+                <div class="flex items-center mb-5 p-2 bg-white border border-gray-300 sharp relative">
+                    <label for="image" class="absolute left-2 top-1/2 transform -translate-y-1/2 transition-all text-lg"><i class="fa fa-image"></i></label>
+                    <input type="file" id="image" name="image" accept=".jpg,.png" class="w-full border-none outline-none pl-8">
+                    <span id="image-error" class="error-message"></span>
+                </div>
+                <div class="text-center">
+                    <button class="bg-white border-2 border-black text-black font-semibold px-4 py-2 sharp hover:bg-black hover:text-white transition-all">Submit</button>
+                </div>
+            </form>
+        </div>
     </div>
     <script>
         const form = document.querySelector('form');
@@ -75,7 +102,7 @@
         messageInput.addEventListener('input', (e) => {
             const message = messageInput.value.trim();
             const messageCount = document.getElementById('message-count');
-            messageCount.textContent = `${message.length}/100`;
+            messageCount.textContent = ${message.length}/100;
             if (message.length > 100 && message !== '') {
                 messageError = true;
             } else {
@@ -118,7 +145,7 @@
         });
 
         form.addEventListener('submit', (e) => {
-            if (nameError || emailError || messageError ||fileInput.value !== '' && !allowedTypes.includes(fileInput.files[0].type)) {
+            if (nameError || emailError || messageError || fileInput.value !== '' && !allowedTypes.includes(fileInput.files[0].type)) {
                 e.preventDefault();
             }
         });
