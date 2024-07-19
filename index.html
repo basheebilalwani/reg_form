@@ -52,7 +52,7 @@
                     <span id="email-error" class="error-message"></span>
                 </div>
                 <div class="flex items-center mb-5 p-2 bg-white border border-gray-300 sharp relative">
-                    <label for="message" class="absolute left-2 top-1/2 transform -translate-y-1/2 transition-all text-lg"><i class="fa fa-comment"></i></label>
+                    <label for="message" class="absolute left-2 top-5 transform -translate-y-1/2 transition-all text-lg"><i class="fa fa-comment"></i></label>
                     <textarea id="message" name="message" placeholder="Message" class="w-full border-none outline-none pl-8 h-20 resize-none overflow-y-auto"></textarea>
                     <span id="message-count" class="absolute right-2 bottom-2">0/100</span>
                     <span id="message-error" class="error-message"></span>
@@ -69,7 +69,7 @@
         </div>
     </div>
     <script>
-        const form = document.querySelector('form');
+       const form = document.querySelector('form');
         const nameInput = document.getElementById('name');
         const emailInput = document.getElementById('email');
         const messageInput = document.getElementById('message');
@@ -102,7 +102,7 @@
         messageInput.addEventListener('input', (e) => {
             const message = messageInput.value.trim();
             const messageCount = document.getElementById('message-count');
-            messageCount.textContent = ${message.length}/100;
+            messageCount.textContent = `${message.length}/100`;
             if (message.length > 100 && message !== '') {
                 messageError = true;
             } else {
@@ -145,7 +145,7 @@
         });
 
         form.addEventListener('submit', (e) => {
-            if (nameError || emailError || messageError || fileInput.value !== '' && !allowedTypes.includes(fileInput.files[0].type)) {
+            if (nameError || emailError || messageError ||fileInput.value !== '' && !allowedTypes.includes(fileInput.files[0].type)) {
                 e.preventDefault();
             }
         });
