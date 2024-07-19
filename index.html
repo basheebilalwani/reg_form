@@ -9,37 +9,39 @@
 </head>
 <body>
     <div class="codesquad"><h1>Contact Us</h1></div>
-        <div class="form-container">
-            <form>
-                <div class="input-group">
-                    <label for="name"><i class="fa fa-user"></i></label>
-                    <input type="text" id="name" name="name" placeholder="Full Name" required>
-                    <span id="name-error" class="error-message"></span>
-                </div>
-                <div class="input-group">
-                    <label for="email"><i class="fa fa-envelope"></i></label>
-                    <input type="email" id="email" name="email" placeholder="Email" required>
-                    <span id="email-error" class="error-message"></span>
-                </div>
-                <div class="input-group">
-                    <div class="message-icon-container">
-                        <div class="message-">
-                            <label for="message"><i class="fa fa-comment"></i></label>
-                        </div>
+    <div class="form-container">
+        <form>
+            <div class="input-group">
+                <label for="name"><i class="fa fa-user"></i></label>
+                <input type="text" id="name" name="name" placeholder="Full Name" required>
+                <span id="name-error" class="error-message"></span>
+            </div>
+            <div class="input-group">
+                <label for="email"><i class="fa fa-envelope"></i></label>
+                <input type="email" id="email" name="email" placeholder="Email" required>
+                <span id="email-error" class="error-message"></span>
+            </div>
+            <div class="input-group">
+                <div class="message-icon-container">
+                    <div class="message-">
+                        <label for="message"><i class="fa fa-comment"></i></label>
                     </div>
-                    <textarea id="message" name="message" placeholder="Message"></textarea>
-                    <span id="message-error" class="error-message"></span>
                 </div>
-                <div class="input-group">
-                    <label for="image"><i class="fa fa-image"></i></label>
-                    <input type="file" id="image" name="image" accept=".jpg,.png">
-                    <span id="image-error" class="error-message"></span>
-                </div>
-                <div class="form-button-container">
-                    <button class="button-59" role="button">Submit</button></div>
-            </form>
-        </div>
+                <textarea id="message" name="message" placeholder="Message"></textarea>
+                <span id="message-error" class="error-message"></span>
+            </div>
+            <div class="input-group">
+                <label for="image"><i class="fa fa-image"></i></label>
+                <input type="file" id="image" name="image" accept=".jpg,.png">
+                <span id="image-error" class="error-message"></span>
+            </div>
+            <div class="form-button-container">
+                <button class="button-59" role="button">Submit</button>
+            </div>
+        </form>
+    </div>
     <script>
+        const form = document.querySelector('form');
         const nameInput = document.getElementById('name');
         const emailInput = document.getElementById('email');
         const messageInput = document.getElementById('message');
@@ -109,6 +111,12 @@
                 document.getElementById('message-error').innerText = 'Message should not exceed 100 characters.';
             } else {
                 document.getElementById('message-error').innerText = '';
+            }
+        });
+
+        form.addEventListener('submit', (e) => {
+            if (nameError || emailError || messageError ||fileInput.value !== '' && !allowedTypes.includes(fileInput.files[0].type)) {
+                e.preventDefault();
             }
         });
     </script>
