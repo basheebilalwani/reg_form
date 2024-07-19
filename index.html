@@ -28,6 +28,7 @@
                     </div>
                 </div>
                 <textarea id="message" name="message" placeholder="Message"></textarea>
+                <span id="message-count">0/100</span>
                 <span id="message-error" class="error-message"></span>
             </div>
             <div class="input-group">
@@ -73,6 +74,8 @@
 
         messageInput.addEventListener('input', (e) => {
             const message = messageInput.value.trim();
+            const messageCount = document.getElementById('message-count');
+            messageCount.textContent = `${message.length}/100`;
             if (message.length > 100 && message !== '') {
                 messageError = true;
             } else {
