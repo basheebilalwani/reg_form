@@ -45,32 +45,36 @@
         const messageInput = document.getElementById('message');
         const fileInput = document.getElementById('image');
 
+        let nameError = false;
+        let emailError = false;
+        let messageError = false;
+
         nameInput.addEventListener('input', (e) => {
             const name = nameInput.value.trim();
             const nameRegex = /^[a-zA-Z ]{3,20}$/;
-            if (!nameRegex.test(name)) {
-                document.getElementById('name-error').innerText = 'Invalid name. Only alphabets and spaces are allowed. Minimum length is 3 characters and maximum is 20 characters.';
+            if (!nameRegex.test(name) && name !== '') {
+                nameError = true;
             } else {
-                document.getElementById('name-error').innerText = '';
+                nameError = false;
             }
         });
 
         emailInput.addEventListener('input', (e) => {
             const email = emailInput.value.trim();
             const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-            if (!emailRegex.test(email)) {
-                document.getElementById('email-error').innerText = 'Invalid email address.';
+            if (!emailRegex.test(email) && email !== '') {
+                emailError = true;
             } else {
-                document.getElementById('email-error').innerText = '';
+                emailError = false;
             }
         });
 
         messageInput.addEventListener('input', (e) => {
             const message = messageInput.value.trim();
-            if (message.length > 100) {
-                document.getElementById('message-error').innerText = 'Message should not exceed 100 characters.';
+            if (message.length > 100 && message !== '') {
+                messageError = true;
             } else {
-                document.getElementById('message-error').innerText = '';
+                messageError = false;
             }
         });
 
@@ -78,10 +82,33 @@
             const file = fileInput.files[0];
             const fileType = file.type;
             const allowedTypes = ['image/jpeg', 'image/png'];
-
             if (!allowedTypes.includes(fileType)) {
                 alert('Only .jpg and .png files are allowed');
                 fileInput.value = ''; // reset the input value
+            }
+        });
+
+        nameInput.addEventListener('blur', (e) => {
+            if (nameError) {
+                document.getElementById('name-error').innerText = 'Invalid name. Only alphabets and spaces are allowed. Minimum length is 3 characters and maximum is 20 characters.';
+            } else {
+                document.getElementById('name-error').innerText = '';
+            }
+        });
+
+        emailInput.addEventListener('blur', (e) => {
+            if (emailError) {
+                document.getElementById('email-error').innerText = 'Invalid email address.';
+            } else {
+                document.getElementById('email-error').innerText = '';
+            }
+        });
+
+        messageInput.addEventListener('blur', (e) => {
+            if (messageError) {
+                document.getElementById('message-error').innerText = 'Message should not exceed 100 characters.';
+            } else {
+                document.getElementById('message-error').innerText = '';
             }
         });
     </script>
