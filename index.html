@@ -14,10 +14,12 @@
                 <div class="input-group">
                     <label for="name"><i class="fa fa-user"></i></label>
                     <input type="text" id="name" name="name" placeholder="Full Name" required>
+                    <span id="name-error" class="error-message"></span>
                 </div>
                 <div class="input-group">
                     <label for="email"><i class="fa fa-envelope"></i></label>
                     <input type="email" id="email" name="email" placeholder="Email" required>
+                    <span id="email-error" class="error-message"></span>
                 </div>
                 <div class="input-group">
                     <div class="message-icon-container">
@@ -26,28 +28,62 @@
                         </div>
                     </div>
                     <textarea id="message" name="message" placeholder="Message"></textarea>
+                    <span id="message-error" class="error-message"></span>
                 </div>
                 <div class="input-group">
                     <label for="image"><i class="fa fa-image"></i></label>
                     <input type="file" id="image" name="image" accept=".jpg,.png">
+                    <span id="image-error" class="error-message"></span>
                 </div>
                 <div class="form-button-container">
                     <button class="button-59" role="button">Submit</button></div>
             </form>
         </div>
     <script>
+        const nameInput = document.getElementById('name');
+        const emailInput = document.getElementById('email');
+        const messageInput = document.getElementById('message');
         const fileInput = document.getElementById('image');
-      
-        fileInput.addEventListener('change', (e) => {
-          const file = fileInput.files[0];
-          const fileType = file.type;
-          const allowedTypes = ['image/jpeg', 'image/png'];
-      
-          if (!allowedTypes.includes(fileType)) {
-            alert('Only.jpg and.png files are allowed');
-            fileInput.value = ''; // reset the input value
-          }
+
+        nameInput.addEventListener('input', (e) => {
+            const name = nameInput.value.trim();
+            const nameRegex = /^[a-zA-Z ]{3,20}$/;
+            if (!nameRegex.test(name)) {
+                document.getElementById('name-error').innerText = 'Invalid name. Only alphabets and spaces are allowed. Minimum length is 3 characters and maximum is 20 characters.';
+            } else {
+                document.getElementById('name-error').innerText = '';
+            }
         });
-      </script>
+
+        emailInput.addEventListener('input', (e) => {
+            const email = emailInput.value.trim();
+            const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!emailRegex.test(email)) {
+                document.getElementById('email-error').innerText = 'Invalid email address.';
+            } else {
+                document.getElementById('email-error').innerText = '';
+            }
+        });
+
+        messageInput.addEventListener('input', (e) => {
+            const message = messageInput.value.trim();
+            if (message.length > 100) {
+                document.getElementById('message-error').innerText = 'Message should not exceed 100 characters.';
+            } else {
+                document.getElementById('message-error').innerText = '';
+            }
+        });
+
+        fileInput.addEventListener('change', (e) => {
+            const file = fileInput.files[0];
+            const fileType = file.type;
+            const allowedTypes = ['image/jpeg', 'image/png'];
+
+            if (!allowedTypes.includes(fileType)) {
+                alert('Only .jpg and .png files are allowed');
+                fileInput.value = ''; // reset the input value
+            }
+        });
+    </script>
 </body>
 </html>
