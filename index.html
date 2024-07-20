@@ -29,7 +29,8 @@
             background-color: #ecfdf5;
         }
         .bg-custom-gray {
-            background-color: #d7d1d0;
+            /* background-color: #d7d1d0; */
+            border: 1px solid #000;
         }
         .text-custom-black {
             color: #000;
@@ -41,23 +42,23 @@
         <h1 class="text-3xl mb-5">CONTACT US</h1>
         <div class="bg-custom-gray p-8 text-center shadow-lg w-full max-w-xl mx-auto">
             <form>
-                <div class="flex items-center mb-5 p-2 bg-white border border-gray-300 sharp relative">
+                <div class="flex items-center mb-5 p-2 bg-white border border-black sharp relative">
                     <label for="name" class="absolute left-2 top-1/2 transform -translate-y-1/2 transition-all text-lg"><i class="fa fa-user"></i></label>
                     <input type="text" id="name" name="name" placeholder="Full Name" required class="w-full border-none outline-none pl-8">
                     <span id="name-error" class="error-message"></span>
                 </div>
-                <div class="flex items-center mb-5 p-2 bg-white border border-gray-300 sharp relative">
+                <div class="flex items-center mb-5 p-2 bg-white border border-black sharp relative">
                     <label for="email" class="absolute left-2 top-1/2 transform -translate-y-1/2 transition-all text-lg"><i class="fa fa-envelope"></i></label>
                     <input type="email" id="email" name="email" placeholder="Email" required class="w-full border-none outline-none pl-8">
                     <span id="email-error" class="error-message"></span>
                 </div>
-                <div class="flex items-center mb-5 p-2 bg-white border border-gray-300 sharp relative">
+                <div class="flex items-center mb-5 p-2 bg-white border border-black sharp relative">
                     <label for="message" class="absolute left-2 top-5 transform -translate-y-1/2 transition-all text-lg"><i class="fa fa-comment"></i></label>
                     <textarea id="message" name="message" placeholder="Message" class="w-full border-none outline-none pl-8 h-20 resize-none overflow-y-auto"></textarea>
                     <span id="message-count" class="absolute right-2 bottom-2">0/100</span>
                     <span id="message-error" class="error-message"></span>
                 </div>
-                <div class="flex items-center mb-5 p-2 bg-white border border-gray-300 sharp relative">
+                <div class="flex items-center mb-5 p-2 bg-white border border-black sharp relative">
                     <label for="image" class="absolute left-2 top-1/2 transform -translate-y-1/2 transition-all text-lg"><i class="fa fa-image"></i></label>
                     <input type="file" id="image" name="image" accept=".jpg,.png" class="w-full border-none outline-none pl-8">
                     <span id="image-error" class="error-message"></span>
